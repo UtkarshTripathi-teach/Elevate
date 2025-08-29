@@ -4,6 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
 import os
+import random
 
 from data_manager import DataManager
 from ml_analyzer import MLAnalyzer
