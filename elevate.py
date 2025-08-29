@@ -520,7 +520,7 @@ def show_placement_prediction():
     features_scaled = scaler.transform(features)
 
     if st.button("Predict Placement"):
-       prediction = model.predict(features_scaled)[0]
+        prediction = model.predict(features_scaled)[0]
         import time
         random.seed(132)
         progress_bar = st.progress(0)
