@@ -261,6 +261,7 @@ def show_study_logging():
 
 def show_weakness_analysis():
     st.header("AI-Powered Weakness Analysis")
+    st.markdown("---")
     
     user_data = st.session_state.data_manager.get_user_data(st.session_state.current_user)
     
@@ -278,32 +279,17 @@ def show_weakness_analysis():
         
         with col1:
             st.subheader("Areas Needing Attention")
-            if weak_topics:
-                for topic in weak_topics[:5]:  # Top 5 weak topics
-                    st.markdown(f"• **{topic['subject']} - {topic['chapter']}**")
-                    st.markdown(f"  Average confidence: {topic['avg_confidence']:.1f}/5")
-                    st.markdown(f"  Total time: {format_time(topic['total_time'])}")
-            else:
-                st.success("Great job! No major weaknesses detected!")
+            st.markdown("---")
+            st.image("https://i.pinimg.com/originals/17/44/1e/17441ef826077986a1ee601f45e6bdfa.gif", width=225)
+            st.markdown("*We are working on this feature*")
+
         
         with col2:
             st.subheader("Personalized Recommendations")
+            st.markdown("---")
             for rec in recommendations:
                 st.info(rec)
         
-        # Confidence trend analysis
-        st.subheader("Confidence Trend Analysis")
-        confidence_trend = user_data.groupby(['subject', 'chapter'])['confidence_rating'].agg(['mean', 'count']).reset_index()
-        confidence_trend.columns = ['Subject', 'Chapter', 'Avg_Confidence', 'Session_Count']
-        
-        fig = px.scatter(confidence_trend, 
-                        x='Session_Count', 
-                        y='Avg_Confidence',
-                        color='Subject',
-                        size='Session_Count',
-                        hover_data=['Chapter'],
-                        title="Confidence vs Study Frequency")
-        st.plotly_chart(fig, use_container_width=True)
         
     except Exception as e:
         st.error(f"Analysis failed: {str(e)}")
