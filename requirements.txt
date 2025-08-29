@@ -2,7 +2,6 @@ pandas
 streamlit
 scikit-learn
 numpy
-datetime
 plotly
 os
 warnings
