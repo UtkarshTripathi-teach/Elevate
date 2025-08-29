@@ -280,7 +280,7 @@ def show_weakness_analysis():
         with col1:
             st.subheader("Areas Needing Attention")
             st.markdown("---")
-            st.image("https://i.pinimg.com/originals/17/44/1e/17441ef826077986a1ee601f45e6bdfa.gif", width=225)
+            st.image("https://i.pinimg.com/originals/42/36/d0/4236d00b6df31c5c1dab3566fa61ff3c.gif", width=225)
             st.markdown("*We are working on this feature*")
 
         
