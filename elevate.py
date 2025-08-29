@@ -529,7 +529,7 @@ def show_placement_prediction():
         placeholder.subheader('Predicting  Placement') 
         
         place = st.empty()
-        place.image('https://cdn.dribbble.com/userupload/23163669/file/original-33613fcd16243932816ae19cd4d8501d.gif',width = 1100)
+        place.image('https://cdn.dribbble.com/userupload/23163669/file/original-33613fcd16243932816ae19cd4d8501d.gif',width = 330)
         
         for i in range(100):
             time.sleep(0.05)
