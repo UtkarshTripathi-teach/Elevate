@@ -3,5 +3,3 @@ streamlit
 scikit-learn
 numpy
 plotly
-os
-warnings
