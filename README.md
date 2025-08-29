@@ -134,10 +134,6 @@ streamlit run elevate.py
 - Improve error handling and input validation paths in the Streamlit UI and data layer.
 
 
-## License
-
-No license file was included in the provided source listing; add a LICENSE to clarify reuse and contributions.
-
 ## Run command (reference)
 
 - Start the app with Streamlit’s CLI as shown below.
