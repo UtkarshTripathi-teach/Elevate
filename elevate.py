@@ -520,12 +520,32 @@ def show_placement_prediction():
     features_scaled = scaler.transform(features)
 
     if st.button("Predict Placement"):
-        prediction = model.predict(features_scaled)[0]
+       prediction = model.predict(features_scaled)[0]
+        import time
+        random.seed(132)
+        progress_bar = st.progress(0)
+        placeholder = st.empty()
+        placeholder.subheader('Predicting  Placement') 
+        
+        place = st.empty()
+        place.image('https://cdn.dribbble.com/userupload/23163669/file/original-33613fcd16243932816ae19cd4d8501d.gif',width = 1100)
+        
+        for i in range(100):
+            time.sleep(0.05)
+            progress_bar.progress(i + 1)
+        
         if prediction == 1:
-            st.success("Candidate is likely to be Placed.")
+            body = f'Candidate is likely to be Placed.'
+            placeholder.empty()
+            place.empty()
+            st.success(body)
+            progress_bar = st.progress(0)
         else:
-            st.error("Candidate is unlikely to be Placed.")
-
+            body = 'Candidate is unlikely to be Placed.'
+            placeholder.empty()
+            place.empty()
+            st.warning(body)
+            progress_bar = st.progress(0)
 
 if __name__ == "__main__":
     main()
